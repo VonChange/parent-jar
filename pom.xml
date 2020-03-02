@@ -66,14 +66,16 @@
         </repository>
     </repositories>
     <distributionManagement>
-        <snapshotRepository>
-            <id>oss</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        </snapshotRepository>
         <repository>
-            <id>oss</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <id>yh-releases</id>
+            <name>Nexus Release Repository</name>
+            <url>http://mvn.yonghui.cn/nexus/content/repositories/releases/</url>
         </repository>
+        <snapshotRepository>
+            <id>yh-snapshots</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>http://mvn.yonghui.cn/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
     </distributionManagement>
     <build>
         <plugins>
@@ -89,30 +91,6 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.5</version>
-                <executions>
-                    <execution>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                        <configuration>
-                            <executable>gpg</executable>
-                            <!--    <gpgArguments>
-                                    <gpgArgument>&#45;&#45;no-tty</gpgArgument>
-                                </gpgArguments>-->
-                            <gpgArguments>
-                                <arg>--pinentry-mode</arg>
-                                <arg>loopback</arg>
-                            </gpgArguments>
-                            <passphrase>change2012</passphrase>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
                 <executions>
                     <execution>
@@ -123,6 +101,7 @@
                     </execution>
                 </executions>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -146,6 +125,7 @@
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
 </project>
