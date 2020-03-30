@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.vonchange.common</groupId>
     <artifactId>parent-jar</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
     <packaging>pom</packaging>
     <name>parent-jar</name>
     <description>parent-jar</description>
@@ -86,6 +86,7 @@
                     <target>${java.version}</target>
                     <encoding>UTF-8</encoding>
                     <failOnError>false</failOnError>
+                    <compilerArgument>-Xlint:unchecked</compilerArgument>
                 </configuration>
             </plugin>
             <plugin>
