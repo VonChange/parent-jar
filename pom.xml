@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.vonchange.common</groupId>
     <artifactId>parent-jar</artifactId>
-    <version>1.2</version>
+    <version>1.3</version>
     <packaging>pom</packaging>
     <name>parent-jar</name>
     <description>parent-jar</description>
@@ -101,14 +101,10 @@
                         </goals>
                         <configuration>
                             <executable>gpg</executable>
-                            <!--    <gpgArguments>
-                                    <gpgArgument>&#45;&#45;no-tty</gpgArgument>
-                                </gpgArguments>-->
                             <gpgArguments>
                                 <arg>--pinentry-mode</arg>
                                 <arg>loopback</arg>
                             </gpgArguments>
-                            <passphrase>change2012</passphrase>
                         </configuration>
                     </execution>
                 </executions>
